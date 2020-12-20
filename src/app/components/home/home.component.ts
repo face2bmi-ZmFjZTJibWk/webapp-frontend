@@ -23,6 +23,23 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  selectedFile: File;
+  selectedFileName = '';
+
+  fileChanged(file?: File): void {
+    this.selectedFile = file
+    if (!this.selectedFile) {
+      this.selectedFileName = ''
+    } else {
+      console.log(this.selectedFile)
+      this.selectedFileName = this.selectedFile[0].name
+    }
+  }
+
+  uploadFile(): void {
+    console.log(this.selectedFile)
+    // handle uploaded file here
+  }
 }
 
 @Component({

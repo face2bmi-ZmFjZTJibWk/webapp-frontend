@@ -26,3 +26,17 @@ main {
   margin: auto;
   background: #eee;
 }
+
+.file-input-button {
+    margin: 0 4px!important
+}
+
+.image-upload {
+  text-align: center;
+  align-items: center;
+}
+
+
+.image-name {
+    padding: 7px 12px;
+}
