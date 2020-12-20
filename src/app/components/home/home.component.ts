@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   bmi: number;
   category: string;
   imgURL: any = "/assets/male.svg"
-
+  loading: boolean = false
 
   constructor(public dialog: MatDialog,) { }
 

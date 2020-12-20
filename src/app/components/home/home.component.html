@@ -33,7 +33,7 @@
                 <mat-icon>close</mat-icon>
             </button>
             <button mat-raised-button type="button" color="primary" aria-label="Upload Image" class="file-input-button"
-                [disabled]="!selectedFile" (click)="uploadFile()">
+                [disabled]="!selectedFile" (click)="uploadFile()" *ngIf="!loading">
                 Upload Image
             </button>
         </mat-card>
@@ -43,7 +43,8 @@
                 <mat-card-title>Prediction</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <mat-list>
+                <mat-spinner *ngIf="loading"></mat-spinner>
+                <mat-list *ngIf="!loading">
                     <mat-list-item>BMI: {{ bmi | number }}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>Height: {{ height | number }} meters</mat-list-item>
