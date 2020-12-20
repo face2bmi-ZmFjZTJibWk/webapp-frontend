@@ -9,3 +9,7 @@ header mat-toolbar a {
   text-decoration: none;
   color: white;
 }
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
