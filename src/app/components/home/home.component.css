@@ -16,6 +16,7 @@ header mat-toolbar a {
 
 main {
   margin: 1em;
+  padding-bottom: 1rem;
 }
 
 .dash {
