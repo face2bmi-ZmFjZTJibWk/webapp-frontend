@@ -15,6 +15,7 @@ module.exports = (req, res) => {
             // POST the image to actual API sever
             var requ = request.post(BACKEND_URL, function (err, resp, bodyy) {
                 // return the response as response to client
+                fs.unlinkSync(image.path)
                 res.status(resp.statusCode).send(resp.body)
             });
             var formdd = requ.form();
