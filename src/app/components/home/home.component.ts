@@ -24,7 +24,9 @@ export class HomeComponent implements OnInit {
 
   infoDialog() {
     if (this.dialog.openDialogs.length == 0) {
-      this.dialog.open(InfoDialogComponent);
+      this.dialog.open(InfoDialogComponent, {
+        width: '400px',
+      });
     }
   }
 
