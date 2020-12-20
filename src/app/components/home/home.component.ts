@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) { }
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,6 +15,8 @@ export class HomeComponent implements OnInit {
   weight: number;
   bmi: number;
   category: string;
+  imgURL: any;
+
 
   constructor(public dialog: MatDialog,) { }
 
@@ -29,10 +35,16 @@ export class HomeComponent implements OnInit {
   fileChanged(file?: File): void {
     this.selectedFile = file
     if (!this.selectedFile) {
-      this.selectedFileName = ''
+      this.selectedFileName = this.imgURL = ''
     } else {
       console.log(this.selectedFile)
       this.selectedFileName = this.selectedFile[0].name
+
+      var reader = new FileReader();
+      reader.readAsDataURL(this.selectedFile[0]);
+      reader.onload = (_event) => {
+        this.imgURL = reader.result
+      }
     }
   }
 

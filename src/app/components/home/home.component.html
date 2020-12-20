@@ -16,6 +16,11 @@
     <mat-card class="dash">
         <mat-card>
             <div class="image-upload">
+                <mat-card-header>
+                    <mat-card-title>Inferring BMI(Body Mass Index) from Face Data</mat-card-title>
+                </mat-card-header>
+                <img *ngIf="imgURL" mat-card-image src="{{ imgURL }}" alt="Image Preview">
+                <br *ngIf="imgURL">
                 <button mat-stroked-button type="button" color="primary" class="file-input-button"
                     (click)="fileInput.click()" aria-label="Select Image" *ngIf="!selectedFile">
                     <span>Choose Image</span>

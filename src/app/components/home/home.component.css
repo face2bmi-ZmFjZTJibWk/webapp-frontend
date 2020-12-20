@@ -38,5 +38,19 @@ main {
 
 
 .image-name {
-    padding: 7px 12px;
+  padding: 7px 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 4px;
+}
+
+img {
+  max-height: 200px;
+  width: unset;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-card-header {
+  display: unset;
+
 }
