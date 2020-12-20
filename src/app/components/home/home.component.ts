@@ -32,8 +32,7 @@ export class HomeComponent implements OnInit {
   fileChanged(file?: File): void {
     this.selectedFile = file
     if (!this.selectedFile) {
-      this.selectedFileName = ''
-      this.imgURL = '/assets/person.svg'
+      this.resetAll()
     } else {
       console.log(this.selectedFile)
       this.selectedFileName = this.selectedFile[0].name
@@ -62,6 +61,12 @@ export class HomeComponent implements OnInit {
       .catch((err) => {
         console.log(err.status);
       });
+  }
+
+  resetAll(): void {
+    this.selectedFileName = null
+    this.imgURL = '/assets/person.svg'
+    this.height = this.weight = this.bmi = this.category = null
   }
 }
 
