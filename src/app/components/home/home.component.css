@@ -13,3 +13,12 @@ header mat-toolbar a {
 .toolbar-spacer {
   flex: 1 1 auto;
 }
+
+main {
+  margin: 1em;
+  min-height: calc(100vh - 50px - 1em) ;
+}
+
+.dash {
+  min-height: calc(100vh - 8em) ;
+}

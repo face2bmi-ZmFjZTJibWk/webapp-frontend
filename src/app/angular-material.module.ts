@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ]
 })
 export class AngularMaterialModule { }
