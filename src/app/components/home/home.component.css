@@ -16,8 +16,6 @@ header mat-toolbar a {
 
 main {
   margin: 1em;
-  min-height: calc(100vh - 50px - 1em);
-
 }
 
 .dash {
@@ -45,11 +43,19 @@ main {
 
 img {
   max-height: 200px;
-  width: unset;
+  max-width: 100%;
   border-radius: 4px;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
+img {
+  pointer-events: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 .mat-card-header {
   display: unset;
 

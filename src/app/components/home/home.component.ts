@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   weight: number;
   bmi: number;
   category: string;
-  imgURL: any;
+  imgURL: any = "/assets/male.svg"
 
 
   constructor(public dialog: MatDialog,) { }
@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
   fileChanged(file?: File): void {
     this.selectedFile = file
     if (!this.selectedFile) {
-      this.selectedFileName = this.imgURL = ''
+      this.selectedFileName = ''
+      this.imgURL = '/assets/male.svg'
     } else {
       console.log(this.selectedFile)
       this.selectedFileName = this.selectedFile[0].name

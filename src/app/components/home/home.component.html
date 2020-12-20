@@ -14,29 +14,28 @@
 </header>
 <main>
     <mat-card class="dash">
-        <mat-card>
-            <div class="image-upload">
-                <mat-card-header>
-                    <mat-card-title>Inferring BMI(Body Mass Index) from Face Data</mat-card-title>
-                </mat-card-header>
-                <img *ngIf="imgURL" mat-card-image src="{{ imgURL }}" alt="Image Preview">
-                <br *ngIf="imgURL">
-                <button mat-stroked-button type="button" color="primary" class="file-input-button"
-                    (click)="fileInput.click()" aria-label="Select Image" *ngIf="!selectedFile">
-                    <span>Choose Image</span>
-                    <input #fileInput type="file" style="display: none" accept=".jpg, .jpeg"
-                        (change)="fileChanged($event.target.files)" />
-                </button>
-                <span class="image-name" *ngIf="selectedFileName">{{ selectedFileName }}</span>
-                <button mat-icon-button type="button" matTooltip="Clear" aria-label="Remove Selected Image"
-                    (click)="fileChanged(null)" *ngIf="selectedFile">
-                    <mat-icon>close</mat-icon>
-                </button>
-                <button mat-raised-button type="button" color="primary" aria-label="Upload Image"
-                    class="file-input-button" [disabled]="!selectedFile" (click)="uploadFile()">
-                    Upload Image
-                </button>
+        <mat-card class="image-upload">
+            <mat-card-header>
+                <mat-card-title>Inferring BMI(Body Mass Index) from Face Data</mat-card-title>
+            </mat-card-header>
+            <div>
+                <img *ngIf="imgURL" src="{{ imgURL }}" alt="Image Preview">
             </div>
+            <button mat-stroked-button type="button" color="primary" class="file-input-button"
+                (click)="fileInput.click()" aria-label="Select Image" *ngIf="!selectedFile">
+                <span>Choose Image</span>
+                <input #fileInput type="file" style="display: none" accept=".jpg, .jpeg"
+                    (change)="fileChanged($event.target.files)" />
+            </button>
+            <span class="image-name" *ngIf="selectedFileName">{{ selectedFileName }}</span>
+            <button mat-icon-button type="button" matTooltip="Clear" aria-label="Remove Selected Image"
+                (click)="fileChanged(null)" *ngIf="selectedFile">
+                <mat-icon>close</mat-icon>
+            </button>
+            <button mat-raised-button type="button" color="primary" aria-label="Upload Image" class="file-input-button"
+                [disabled]="!selectedFile" (click)="uploadFile()">
+                Upload Image
+            </button>
         </mat-card>
         <br>
         <mat-card>
