@@ -60,3 +60,6 @@ img {
   display: unset;
 
 }
+mat-spinner {
+  margin: auto;
+}

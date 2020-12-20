@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit {
   }
 
   uploadFile(): void {
+    this.loading = true
     console.log(this.selectedFile)
     // handle uploaded file here
     this.ApiService.predictBMI(this.selectedFile[0])
@@ -56,6 +57,7 @@ export class HomeComponent implements OnInit {
         this.weight = Number(res['prediction']['weight'])
         this.bmi = Number(res['prediction']['bmi'])
         this.category = res['prediction']['category']
+        this.loading = false
       })
       .catch((err) => {
         console.log(err.status);
