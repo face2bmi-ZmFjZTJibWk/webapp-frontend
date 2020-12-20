@@ -14,6 +14,24 @@
 </header>
 <main>
     <mat-card class="dash">
-
+        <mat-card>
+        </mat-card>
+        <br>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Prediction</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>BMI: {{ bmi | number }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Height: {{ height | number }} meters</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Weight: {{ weight | number }} Kilograms</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Category: {{ category }}</mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
     </mat-card>
 </main>

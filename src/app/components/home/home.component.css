@@ -16,9 +16,13 @@ header mat-toolbar a {
 
 main {
   margin: 1em;
-  min-height: calc(100vh - 50px - 1em) ;
+  min-height: calc(100vh - 50px - 1em);
+
 }
 
 .dash {
-  min-height: calc(100vh - 8em) ;
+  min-height: calc(100vh - 8em);
+  max-width: 800px;
+  margin: auto;
+  background: #eee;
 }
