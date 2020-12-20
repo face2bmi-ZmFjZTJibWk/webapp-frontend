@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
-class ImageSnippet {
-  constructor(public src: string, public file: File) { }
-}
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +15,7 @@ export class HomeComponent implements OnInit {
   imgURL: any = "/assets/male.svg"
   loading: boolean = false
 
-  constructor(public dialog: MatDialog,) { }
+  constructor(private ApiService: ApiService, public dialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
@@ -52,6 +49,17 @@ export class HomeComponent implements OnInit {
   uploadFile(): void {
     console.log(this.selectedFile)
     // handle uploaded file here
+    this.ApiService.predictBMI(this.selectedFile[0])
+      .then((res) => {
+        console.log(res);
+        this.height = Number(res['prediction']['height'])
+        this.weight = Number(res['prediction']['weight'])
+        this.bmi = Number(res['prediction']['bmi'])
+        this.category = res['prediction']['category']
+      })
+      .catch((err) => {
+        console.log(err.status);
+      });
   }
 }
 
