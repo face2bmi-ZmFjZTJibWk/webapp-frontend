@@ -31,5 +31,5 @@ jobs:
       - run: npm i -g vercel
       - name: Vercel
         run: |
-          vercel --confirm --token ${{ secrets.VERCEL_TOKEN }}
+          vercel --confirm --token ${{ secrets.VERCEL_TOKEN }} --name ${{ secrets.NAME }}
           vercel --prod
