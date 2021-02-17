@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { HomeComponent, InfoDialogComponent } from './components/home/home.component';
+import { HomeComponent, InfoDialogComponent, PrivacyDialogComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    PrivacyDialogComponent
   ],
   imports: [
     BrowserModule,

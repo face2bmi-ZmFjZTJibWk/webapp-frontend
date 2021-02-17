@@ -30,6 +30,14 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  privacyDialog() {
+    if (this.dialog.openDialogs.length == 0) {
+      this.dialog.open(PrivacyDialogComponent, {
+        width: '400px',
+      });
+    }
+  }
+
   selectedFile: File;
   selectedFileName = '';
 
@@ -103,3 +111,8 @@ export class HomeComponent implements OnInit {
   templateUrl: './info-dialog.component.html',
 })
 export class InfoDialogComponent { }
+
+@Component({
+  templateUrl: './privacy-dialog.component.html',
+})
+export class PrivacyDialogComponent { }

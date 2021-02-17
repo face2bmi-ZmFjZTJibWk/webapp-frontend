@@ -2,6 +2,9 @@
     <mat-toolbar>
         <a href="/" matTooltip="Face2BMI Home">Face2BMI</a>
         <span class="toolbar-spacer"></span>
+        <button mat-icon-button aria-label="key" (click)="privacyDialog()" matTooltip="Privacy Tip">
+            <mat-icon>privacy_tip</mat-icon>
+        </button>
         <button mat-icon-button aria-label="info" (click)="infoDialog()" matTooltip="Info">
             <mat-icon>info_outline</mat-icon>
         </button>
