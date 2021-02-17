@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private ApiService: ApiService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem("pd")) this.privacyDialog()
   }
 
   infoDialog() {
@@ -115,4 +116,8 @@ export class InfoDialogComponent { }
 @Component({
   templateUrl: './privacy-dialog.component.html',
 })
-export class PrivacyDialogComponent { }
+export class PrivacyDialogComponent {
+  pdAccepted() {
+    localStorage.setItem("pd", "true")
+  }
+}
