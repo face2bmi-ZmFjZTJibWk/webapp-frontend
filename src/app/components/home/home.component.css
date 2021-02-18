@@ -1,13 +1,14 @@
 header mat-toolbar {
-  background: rgb(37, 37, 37);
-  color: white;
+  background: #252525;
+  color: #fff;
   height: 50px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 header mat-toolbar a {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 .toolbar-spacer {
@@ -27,7 +28,7 @@ main {
 }
 
 .file-input-button {
-    margin: 0 4px!important
+  margin: 0 4px !important;
 }
 
 .image-upload {
@@ -35,21 +36,21 @@ main {
   align-items: center;
 }
 
+.image-name,
+img {
+  border-radius: 4px;
+}
 
 .image-name {
   padding: 7px 12px;
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 img {
   max-height: 200px;
   max-width: 100%;
-  border-radius: 4px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-img {
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
   pointer-events: none;
   user-select: none;
   -moz-user-select: none;
@@ -57,10 +58,11 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
 .mat-card-header {
   display: unset;
-
 }
+
 mat-spinner {
   margin: auto;
 }
