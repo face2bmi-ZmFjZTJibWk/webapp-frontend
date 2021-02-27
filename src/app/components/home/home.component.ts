@@ -42,9 +42,17 @@ export class HomeComponent implements OnInit {
   selectedFile: File;
   selectedFileName = '';
 
+  fileSizeValid(): boolean {
+    // returns true if file-size is less than 4.99 MB
+    return (this.selectedFile[0].size < 5000000) ? true : false
+  }
+
   fileChanged(file?: File): void {
     this.selectedFile = file
     if (!this.selectedFile) {
+      this.resetAll()
+    } else if (!this.fileSizeValid()) {
+      this.openSnackBar("Please select image of size < 5 MB")
       this.resetAll()
     } else {
       this.selectedFileName = this.selectedFile[0].name
@@ -60,8 +68,10 @@ export class HomeComponent implements OnInit {
   uploadFile(): void {
     this.loading = true
     let image = this.selectedFile[0]
-
-    if (image) {
+    if (!this.fileSizeValid()) {
+      this.openSnackBar("Please select image of size < 5 MB")
+      this.resetAll()
+    } else if (image) {
       this.ApiService.predictBMI(image)
         .then((res) => {
           let prediction = res['prediction']
