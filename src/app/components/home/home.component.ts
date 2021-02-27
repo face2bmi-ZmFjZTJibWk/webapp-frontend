@@ -89,8 +89,8 @@ export class HomeComponent implements OnInit {
         })
         .catch((err) => {
           this.error = err
-          console.log(err.message);
-          this.openSnackBar(err.message)
+          console.log(err);
+          this.openSnackBar(err.error.error.message)
           this.loading = false
         })
         .finally(() => {

@@ -16,7 +16,11 @@ module.exports = (req, res) => {
             var requ = request.post(BACKEND_URL, function (err, resp, bodyy) {
                 // return the response as response to client
                 fs.unlinkSync(image.path)
-                res.status(resp.statusCode).send(resp.body)
+                if (resp.statusCode === 200) {
+                    res.status(resp.statusCode).send(resp.body)
+                } else {
+                    res.status(resp.statusCode).send({ error: { code: resp.statusCode, message: resp.statusMessage } })
+                }
             });
             var formdd = requ.form();
             formdd.append('file', fs.createReadStream(image.path));
