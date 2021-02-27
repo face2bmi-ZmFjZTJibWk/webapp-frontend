@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
   }
 
   resetAll(): void {
-    this.selectedFileName = null
+    this.selectedFileName = this.selectedFile = null
     this.imgURL = '/assets/person.svg'
     this.height = this.weight = this.bmi = this.category = null
     this.loading = false
