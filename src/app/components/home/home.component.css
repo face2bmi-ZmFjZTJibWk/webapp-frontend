@@ -66,3 +66,7 @@ img {
 mat-progress-bar {
   margin: 10px auto;
 }
+
+mat-panel-title {
+  font-weight: 500;
+}
