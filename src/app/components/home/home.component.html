@@ -41,11 +41,13 @@
             </button>
         </mat-card>
         <br>
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>Prediction</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel hideToggle [expanded]="panelOpenState">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Prediction
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
                 <mat-spinner *ngIf="loading"></mat-spinner>
                 <mat-list *ngIf="!loading">
                     <mat-list-item>BMI: {{ bmi | number }}</mat-list-item>
@@ -56,7 +58,7 @@
                     <mat-divider></mat-divider>
                     <mat-list-item>Category: {{ category }}</mat-list-item>
                 </mat-list>
-            </mat-card-content>
-        </mat-card>
+            </mat-expansion-panel>
+        </mat-accordion>
     </mat-card>
 </main>

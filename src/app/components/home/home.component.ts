@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   imgURL: any = "/assets/person.svg"
   loading: boolean = false
   error: any
-
+  panelOpenState: boolean = false
   constructor(private ApiService: ApiService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit {
 
   uploadFile(): void {
     this.loading = true
+    this.panelOpenState = true
     let image = this.selectedFile
     if (!this.fileSizeValid()) {
       this.openSnackBar("Please select image of size < 5 MB")
@@ -94,6 +95,7 @@ export class HomeComponent implements OnInit {
             this.weight = Number(res['prediction']['weight'])
             this.bmi = Number(res['prediction']['bmi'])
             this.category = res['prediction']['category']
+            this.panelOpenState = true
           } else if (err) {
             this.error = err
             console.log(err);
@@ -122,10 +124,11 @@ export class HomeComponent implements OnInit {
     this.selectedFileName = this.selectedFile = null
     this.imgURL = '/assets/person.svg'
     this.height = this.weight = this.bmi = this.category = null
-    this.loading = false
+    this.loading = this.panelOpenState = false
   }
 
   openSnackBar(message: any) {
+    this.panelOpenState = false
     if (!this._snackBar._openedSnackBarRef) {
       this._snackBar.open(message, 'close', {
         duration: 3000,
