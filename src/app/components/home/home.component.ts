@@ -40,34 +40,39 @@ export class HomeComponent implements OnInit {
   }
 
   selectedFile: File;
-  selectedFileName = '';
+  selectedFileName = null;
 
   fileSizeValid(): boolean {
     // returns true if file-size is less than 4.99 MB
-    return (this.selectedFile[0].size < 5000000) ? true : false
+    return (this.selectedFile.size < 5000000) ? true : false
   }
 
-  fileChanged(file?: File): void {
-    this.selectedFile = file
-    if (!this.selectedFile) {
-      this.resetAll()
-    } else if (!this.fileSizeValid()) {
-      this.openSnackBar("Please select image of size < 5 MB")
-      this.resetAll()
-    } else {
-      this.selectedFileName = this.selectedFile[0].name
+  fileChanged(files?: FileList): void {
+    if (files) {
+      if (!files.length) return
 
-      var reader = new FileReader();
-      reader.readAsDataURL(this.selectedFile[0]);
-      reader.onload = (_event) => {
-        this.imgURL = reader.result
+      this.selectedFile = files[0]
+
+      if (!this.fileSizeValid()) {
+        this.resetAll()
+        this.openSnackBar("Please select image of size < 5 MB")
+      } else {
+        this.selectedFileName = this.selectedFile.name
+
+        var reader = new FileReader();
+        reader.readAsDataURL(this.selectedFile);
+        reader.onload = (_event) => {
+          this.imgURL = reader.result
+        }
       }
+    } else {
+      this.resetAll()
     }
   }
 
   uploadFile(): void {
     this.loading = true
-    let image = this.selectedFile[0]
+    let image = this.selectedFile
     if (!this.fileSizeValid()) {
       this.openSnackBar("Please select image of size < 5 MB")
       this.resetAll()
