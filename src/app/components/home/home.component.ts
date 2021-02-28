@@ -47,6 +47,11 @@ export class HomeComponent implements OnInit {
     return (this.selectedFile.size < 5000000) ? true : false
   }
 
+  fileTypeValid(): boolean {
+    // returns true if file-type is JPEG
+    return (this.selectedFile.type === 'image/jpeg') ? true : false
+  }
+
   fileChanged(files?: FileList): void {
     if (files) {
       if (!files.length) return
@@ -56,6 +61,9 @@ export class HomeComponent implements OnInit {
       if (!this.fileSizeValid()) {
         this.resetAll()
         this.openSnackBar("Please select image of size < 5 MB")
+      } else if (!this.fileTypeValid()) {
+        this.resetAll()
+        this.openSnackBar("Please select JPEG image")
       } else {
         this.selectedFileName = this.selectedFile.name
 
