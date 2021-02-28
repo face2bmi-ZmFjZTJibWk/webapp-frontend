@@ -63,6 +63,6 @@ img {
   display: unset;
 }
 
-mat-spinner {
-  margin: auto;
+mat-progress-bar {
+  margin: 10px auto;
 }

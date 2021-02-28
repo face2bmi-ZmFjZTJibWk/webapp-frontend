@@ -48,7 +48,7 @@
                         Prediction
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <mat-spinner *ngIf="loading"></mat-spinner>
+                <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
                 <mat-list *ngIf="!loading">
                     <mat-list-item>BMI: {{ bmi | number }}</mat-list-item>
                     <mat-divider></mat-divider>
