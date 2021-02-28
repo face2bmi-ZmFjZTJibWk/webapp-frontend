@@ -95,8 +95,11 @@ export class HomeComponent implements OnInit {
         .catch((err) => {
           this.error = err
           console.log(err);
-          this.openSnackBar(err.error.error.message)
-          this.loading = false
+          if ((typeof (this.error.error.error) === "undefined")) {
+            this.openSnackBar(err.statusText)
+          } else {
+            this.openSnackBar(err.error.error.message)
+          }
         })
         .finally(() => {
           this.loading = false
