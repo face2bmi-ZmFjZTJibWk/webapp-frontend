@@ -39,6 +39,8 @@ main {
 .image-name,
 img {
   border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 .image-name {
@@ -46,11 +48,10 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-img {
+img,
+svg {
   max-height: 200px;
   max-width: 100%;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
   pointer-events: none;
   user-select: none;
   -moz-user-select: none;

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   weight: number;
   bmi: number;
   category: string;
-  imgURL: any = "/assets/person.svg"
+  imgURL: string | ArrayBuffer;
   loading: boolean = false
   error: any
   panelOpenState: boolean = false
@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit {
 
   resetAll(): void {
     this.selectedFileName = this.selectedFile = null
-    this.imgURL = '/assets/person.svg'
+    this.imgURL = undefined
     this.height = this.weight = this.bmi = this.category = null
     this.loading = this.panelOpenState = false
   }
