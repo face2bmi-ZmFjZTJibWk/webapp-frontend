@@ -121,9 +121,7 @@ export class HomeComponent implements OnInit {
   }
 
   resetAll(): void {
-    this.selectedFileName = this.selectedFile = null
-    this.imgURL = undefined
-    this.height = this.weight = this.bmi = this.category = null
+    this.selectedFileName = this.selectedFile = this.imgURL = this.height = this.weight = this.bmi = this.category = null
     this.loading = this.panelOpenState = false
   }
 
